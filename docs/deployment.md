@@ -197,56 +197,7 @@ npx serve out
 
 #### GitHub Pages Deployment
 
-##### Method 1: GitHub Actions (Recommended)
-
-1. **Create GitHub Actions workflow** (`.github/workflows/deploy.yml`):
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: npm install
-    
-    - name: Build project
-      run: npm run build
-      env:
-        NEXT_PUBLIC_ENABLE_STATIC_MODE: true
-        NEXT_PUBLIC_ORG_NAME: ${{ secrets.ORG_NAME }}
-        NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-    
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out
-```
-
-2. **Configure GitHub repository**:
-   - Go to Settings > Pages
-   - Source: Deploy from a branch
-   - Branch: `gh-pages`
-   - Add required secrets in Settings > Secrets
-
-##### Method 2: Manual Deployment
+**Manual Deployment**:
 
 ```bash
 # Build for GitHub Pages
@@ -255,6 +206,12 @@ NEXT_PUBLIC_ENABLE_STATIC_MODE=true npm run build
 # Deploy to gh-pages branch
 npx gh-pages -d out
 ```
+
+**Repository Configuration**:
+- Go to Settings > Pages
+- Source: Deploy from a branch
+- Branch: `gh-pages`
+- Root directory: `/ (root)`
 
 #### Netlify Deployment
 

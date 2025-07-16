@@ -29,7 +29,7 @@ A modern, responsive website template built for student organizations, professio
 Click "Use this template" on GitHub or clone this repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git clone https://github.com/christiano-developer/studentclubs.git
 cd YOUR_REPO_NAME
 ```
 
