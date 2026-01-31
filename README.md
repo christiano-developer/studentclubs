@@ -168,27 +168,7 @@ npm run build
 - [Admin Guide](docs/admin.md) - Admin dashboard features and usage
 - [Development Guide](docs/development.md) - For developers extending the template
 
-## 🏗️ Project Structure
 
-```
-├── src/
-│   ├── app/                 # Next.js app router pages
-│   ├── components/          # React components
-│   ├── config/             # Configuration files
-│   │   ├── organization.ts  # Organization settings
-│   │   ├── academic.ts     # Academic structure config
-│   │   └── team.ts         # Team configuration
-│   ├── contexts/           # React contexts
-│   ├── hooks/              # Custom React hooks
-│   ├── lib/                # Utility libraries
-│   └── types/              # TypeScript type definitions
-├── public/                 # Static assets
-│   ├── logos/              # Organization logos
-│   └── team/               # Team member photos
-├── functions/              # Firebase Cloud Functions
-├── docs/                   # Documentation
-└── firebase.json           # Firebase configuration
-```
 
 ## 🔧 Available Scripts
 
